@@ -7,6 +7,7 @@ print(dF)
 
 with open("Sample.csv",'r')  as file:
   reader=csv.reader(file)
+  next(reader)
   connection = pymysql.connect(host='localhost', user='root',  password='Year' ,db='nikhildb')
   cursor=connection.cursor()
   for row in reader:
