@@ -8,10 +8,10 @@ print(dF)
 with open("Sample.csv",'r')  as file:
   reader=csv.reader(file)
   next(reader)
-  connection = pymysql.connect(host='localhost', user='root',  password='Year' ,db='nikhildb')
+  connection = pymysql.connect(host="localhost", user="root",  password="" ,db="nikhildb")
   cursor=connection.cursor()
   for row in reader:
-           cursor.execute('INSERT INTO csv (`Region`, `Country`, `Item Type`, `Sales Channel`, `Order Priority`, `Order Date`, `Order ID`, `Ship Date`, `Units Sold`, `Unit Price`, `Unit Cost`, `Total Revenue`, `Total Cost`, `Total Profit`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',row)
+           cursor.execute("INSERT INTO csv  VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",row)
            connection.commit()
 
 
